@@ -174,13 +174,6 @@ Uint8 kwantyzuj(Uint8 wartosc, int max_wartosc) {
     return wartosc * max_wartosc / 255;
 }
 
-bool operator<(const SDL_Color& lhs, const SDL_Color& rhs) {
-    if (lhs.r != rhs.r) return lhs.r < rhs.r;
-    if (lhs.g != rhs.g) return lhs.g < rhs.g;
-    if (lhs.b != rhs.b) return lhs.b < rhs.b;
-    return lhs.a < rhs.a;  // Jeżeli kanał alfa jest używany
-}
-
 Uint8 z24Kdo7K(SDL_Color kolor) {
     Uint8 nowyR = kwantyzuj(kolor.r, 3); // 0-3 (2 bity)
     Uint8 nowyG = kwantyzuj(kolor.g, 7); // 0-7 (3 bity)
@@ -238,87 +231,6 @@ void paletaNarzucona7BIT() {
 
     narysujPalete7BIT(0, 210, paleta7k);
 }
-
-
-
-
-
-
-void zliczKoloryNaObrazku() {
-    kolorCzestotliwosc.clear();
-
-    SDL_Color kolor;
-
-    for (int y = 0; y < wysokosc/2; y++) {
-        for (int x = 0; x < szerokosc/2; x++) {
-            kolor = getPixel(x, y);
-
-            if (kolorCzestotliwosc.find(kolor) == kolorCzestotliwosc.end()) {
-                kolorCzestotliwosc[kolor] = 1;
-            } else {
-                kolorCzestotliwosc[kolor]++;
-            }
-        }
-    }
-
-    przepiszDoPalety();
-}
-
-void przepiszDoPalety() {
-    std::vector<std::pair<SDL_Color, int>> kolorLista(kolorCzestotliwosc.begin(), kolorCzestotliwosc.end());
-
-    std::sort(kolorLista.begin(), kolorLista.end(), [](const std::pair<SDL_Color, int>& a, const std::pair<SDL_Color, int>& b) {
-        return a.second > b.second;
-    });
-
-    for (int i = 0; i < 128 && i < kolorLista.size(); i++) {
-        paleta7k[i] = kolorLista[i].first;
-    }
-}
-
-float obliczOdlegloscRGB(const SDL_Color& kolor1, const SDL_Color& kolor2) {
-    int rDiff = kolor1.r - kolor2.r;
-    int gDiff = kolor1.g - kolor2.g;
-    int bDiff = kolor1.b - kolor2.b;
-
-    return std::sqrt(rDiff * rDiff + gDiff * gDiff + bDiff * bDiff);
-}
-
-SDL_Color znajdzNajblizszyKolor(const SDL_Color& kolor) {
-    SDL_Color najblizszy = paleta7k[0];
-    float najmniejszaOdleglosc = obliczOdlegloscRGB(kolor, paleta7k[0]);
-
-    for (int i = 1; i < 128; i++) {
-        float odleglosc = obliczOdlegloscRGB(kolor, paleta7k[i]);
-        if (odleglosc < najmniejszaOdleglosc) {
-            najmniejszaOdleglosc = odleglosc;
-            najblizszy = paleta7k[i];
-        }
-    }
-
-    return najblizszy;
-}
-
-void paletaWykryta7BIT() {
-    SDL_Color kolor, nowyKolor;
-    zliczKoloryNaObrazku();
-
-    for (int y = 0; y < wysokosc / 2; y++) {
-        for (int x = 0; x < szerokosc / 2; x++) {
-            kolor = getPixel(x, y);
-
-            nowyKolor = znajdzNajblizszyKolor(kolor);
-
-            setPixel(x + szerokosc / 2, y, nowyKolor.r, nowyKolor.g, nowyKolor.b);
-        }
-    }
-
-    narysujPalete7BIT(0, 210, paleta7k);
-}
-
-
-
-
 
 Uint8 z24Kdo7S(SDL_Color kolor) {
     Uint8 szary8bit, szary7bit;
