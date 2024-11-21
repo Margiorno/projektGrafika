@@ -31,4 +31,5 @@ void narysujPalete(int px, int py, SDL_Color pal8[]);
 void narysujPalete7BIT(int px, int py, SDL_Color pal7[]);
 void narysujPalete_szary(int px, int py, SDL_Color pal8[]);
 void paletaWykryta();
+
 #endif

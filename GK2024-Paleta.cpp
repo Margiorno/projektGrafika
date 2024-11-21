@@ -2,12 +2,6 @@
 #include "GK2024-Zmienne.h"
 #include "GK2024-Funkcje.h"
 
-#include <map>
-#include <vector>
-#include <algorithm>
-
-
-
 void narzuconaV1() {
     SDL_Color kolor;
     int R, G, B;
