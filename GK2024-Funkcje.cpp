@@ -37,16 +37,12 @@ void Funkcja4() {
 }
 
 void Funkcja5() {
-
-    paletaWykryta7BIT();
-
+    paletaNarzuconaSzara();
     SDL_UpdateWindowSurface(window);
 }
 
 void Funkcja6() {
-
-    paletaNarzuconaSzara();
-
+    paletaWykryta();
     SDL_UpdateWindowSurface(window);
 }
 
