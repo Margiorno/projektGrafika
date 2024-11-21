@@ -31,13 +31,4 @@ void narysujPalete(int px, int py, SDL_Color pal8[]);
 void narysujPalete7BIT(int px, int py, SDL_Color pal7[]);
 void narysujPalete_szary(int px, int py, SDL_Color pal8[]);
 
-// Wykrywanie najczęściej używanych kolorów
-void zliczKoloryNaObrazku();
-void przepiszDoPalety();
-float obliczOdlegloscRGB(const SDL_Color& kolor1, const SDL_Color& kolor2);
-SDL_Color znajdzNajblizszyKolor(const SDL_Color& kolor);
-
-// Dostosowanie obrazu do palety
-void paletaWykryta7BIT();
-
 #endif
