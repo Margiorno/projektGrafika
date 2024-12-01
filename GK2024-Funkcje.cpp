@@ -54,6 +54,30 @@ void Funkcja7() {
 
 void Funkcja8() {
 
+    int zakres = 1;
+    int rozmiar = 2;
+    float podzial = zakres*1.0 / (rozmiar*rozmiar);
+
+    for (int y=0; y<rozmiar; y++) {
+        for (int x=0; x<rozmiar; x++) {
+            zaktualizowanaTablicaBayera2[y][x] = (tablicaBayera2[y][x]*podzial)-podzial/2;
+        }
+    }
+
+    for(int y = 0; y < rozmiar; y++) {
+        cout << endl;
+        for(int x = 0; x< rozmiar; x++) {
+            cout << tablicaBayera2[y][x]<<" ";
+        }
+    }
+    cout << endl;
+    for(int y = 0; y < rozmiar; y++) {
+        cout << endl;
+        for(int x = 0; x< rozmiar; x++) {
+            cout << zaktualizowanaTablicaBayera2[y][x]<<" ";
+        }
+    }
+    cout << endl;
     SDL_UpdateWindowSurface(window);
 }
 

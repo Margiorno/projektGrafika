@@ -341,7 +341,7 @@ void paletaWykryta(){
 
 
 void zaktualizujTabliceBayera4() {
-    int zakres = 2;
+    int zakres = 1;
     int rozmiar = 4;
     float podzial = zakres*1.0 / (rozmiar*rozmiar);
 
@@ -378,24 +378,26 @@ void paletaNarzuconaSzaraDitheringBayera() {
     int iloscPrzekroczenZakresu = 0;
     zaktualizujTabliceBayera4();
 
-    Uint8 szary7bit, tablica, szaryDoProgowania;
+    float tablica, szaryDoProgowania;
+    float szary8bit = 0;
     SDL_Color kolor, nowySzary;
 
     for(int y = 0; y < wysokosc/2; y++) {
         for(int x = 0; x < szerokosc/2; x++) {
             kolor = getPixel(x, y);
-            szary7bit = z24Kdo7S(kolor);
+            szary8bit = 0.299 * kolor.r + 0.587 * kolor.g + 0.114 * kolor.b;
             tablica = zaktualizowanaTablicaBayera4[y % rozmiar][x % rozmiar];
 
-            iloscPrzekroczenZakresu = szary7bit / 2; // 2 bo tyle mierzy zakres nasz przy 7 bitach - 255 / 128 = 2
-            szaryDoProgowania = szary7bit - (iloscPrzekroczenZakresu * 2);
+            iloscPrzekroczenZakresu = szary8bit / 2; // 2 bo tyle mierzy zakres nasz przy 7 bitach
+            szaryDoProgowania = szary8bit - (iloscPrzekroczenZakresu * 2);
+            //cout << "szary do progowania: " << tablica << "\n";
 
             if(szaryDoProgowania > tablica) {
                 nowySzary = paleta8s[iloscPrzekroczenZakresu + 1];
             } else {
                 nowySzary = paleta8s[iloscPrzekroczenZakresu];
             }
-            setPixel(x + szerokosc / 2, y, nowySzary.r, nowySzary.r, nowySzary.r);
+            setPixel(x + szerokosc / 2, y, nowySzary.r, nowySzary.g, nowySzary.b);
         }
     }
 
