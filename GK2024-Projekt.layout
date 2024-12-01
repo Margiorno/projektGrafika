@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="Debug" />
+	<File name="GK2024-MedianCut.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="130" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="GK2024-Pliki.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="GK2024-Zmienne.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="650" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="GK2024-Funkcje.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="178" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="GK2024-Zmienne.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="235" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="GK2024-Pliki.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="179" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="GK2024-Projekt.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2307" topLine="42" />
+		</Cursor>
+	</File>
+	<File name="GK2024-Paleta.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="942" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="GK2024-Paleta.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8517" topLine="95" />
+		</Cursor>
+		<Folding>
+			<Collapse line="4" />
+			<Collapse line="30" />
+			<Collapse line="56" />
+			<Collapse line="83" />
+			<Collapse line="101" />
+			<Collapse line="119" />
+			<Collapse line="139" />
+			<Collapse line="168" />
+			<Collapse line="176" />
+			<Collapse line="190" />
+			<Collapse line="204" />
+			<Collapse line="226" />
+			<Collapse line="234" />
+			<Collapse line="247" />
+			<Collapse line="281" />
+			<Collapse line="292" />
+			<Collapse line="304" />
+			<Collapse line="315" />
+			<Collapse line="322" />
+		</Folding>
+	</File>
+	<File name="GK2024-Funkcje.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="750" topLine="27" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>
